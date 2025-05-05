@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { getAuth, signOut, onAuthStateChanged } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
-import { Button, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import app from '@/firebaseconfig';
 
 const Home = () => {
@@ -34,10 +34,19 @@ const Home = () => {
 
   if(user === null) return null;  
   return (
-    <div>
-      <Typography>Welcome to the Homepage, { user.displayName}! </Typography>
-      <Button onClick={handleLogout}>LogOut</Button>
-    </div>
+   <Box sx={{
+    height: '100vh',
+    display: 'flex',
+    flexDirection: 'column',     // stack vertically
+    justifyContent: 'center',    // center vertically
+    alignItems: 'center',        // center horizontally
+    textAlign: 'center',
+  }}>
+
+     <Typography sx={{mb:4 , fontWeight:'bold' ,fontFamily:'bold' , fontSize:45}}>Welcome to the Homepage, { user.displayName}! </Typography>
+     <Button onClick={handleLogout} sx={{ padding: '10px 20px' , fontSize:20}}>LogOut</Button>
+   
+   </Box>
   )
 }
 
