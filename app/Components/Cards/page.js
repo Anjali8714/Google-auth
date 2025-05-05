@@ -3,7 +3,7 @@ import { Box, Button, Card, CardContent, Stack, Typography } from '@mui/material
 import { useState , useEffect  } from 'react'
 import { useRouter } from 'next/navigation';
 import app from "@/firebaseconfig";
-import { getAuth } from 'firebase/auth';
+import { getAuth, signInWithRedirect } from 'firebase/auth';
 import { signInWithPopup , GoogleAuthProvider } from 'firebase/auth';
 import { FcGoogle } from "react-icons/fc";
 
@@ -32,7 +32,7 @@ const Cards = () => {
       const auth = getAuth(app);
       const provider = new GoogleAuthProvider();
       try {
-        await signInWithPopup(auth , provider);
+        await signInWithRedirect(auth , provider);
         router.push('/Home');
         
       }catch(error) {
