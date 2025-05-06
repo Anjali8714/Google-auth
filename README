@@ -1,0 +1,53 @@
+#Frontend Developer Intern Assignment
+This project is part of the assignment for the Frontend Developer Intern position. It consists of two main parts:
+
+1.Next.js Web App: A Google Sign-In website using Firebase Auth and Material-UI.
+
+2.Expo Mobile App: A mobile app that loads the web app using WebView and integrates Firebase Cloud Messaging (FCM) for push notifications.
+
+#Next.js Web App with Google Sign-In
+.Start the app using:npm run dev
+.The app will be running on http://localhost:3000.
+.Login using Google Auth. Upon successful login, users will be redirected to the /home page.
+
+#Expo Mobile App with WebView
+.To run the app locally:npx expo start.
+.Scan the QR code with the Expo Go app on your mobile device.
+.The Expo app will load the Next.js web app in a WebView and allow Google Sign-In.
+
+#Push Notifications (FCM):
+.Firebase Cloud Messaging (FCM) is integrated for push notifications.
+.To enable push notifications, ensure Firebase setup is completed and google-services.json is added to the android/app/ folder.
+
+###Send Notification from Firebase
+->Go to Firebase Console.
+
+->Select your project → Click Cloud Messaging.
+
+->Click Send Your First Message.
+
+->Enter a Title and Body.
+
+->Choose Send via device token.
+
+->Paste the FCM token from your app.
+
+->Listen for incoming notifications.
+
+#Technologies Used
+*Frontend: Next.js, React.js, Material-UI (MUI)
+
+*Authentication: Firebase Google Auth
+
+*Push Notifications: Firebase Cloud Messaging (FCM)
+
+*Mobile: React Native, Expo, WebView
+
+#Deploy the Web App
+
+push to Netlify
+
+#Deploy the Mobile App
+
+Use EAS Build:eas build -p android
+
